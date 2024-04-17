@@ -1,0 +1,12 @@
+services:
+  dokuwiki:
+    image: lscr.io/linuxserver/dokuwiki:latest
+    container_name: dokuwiki
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./original_source/:/config/dokuwiki/data/pages
+    ports:
+      - 8080:80/tcp
